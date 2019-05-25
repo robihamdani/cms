@@ -1,0 +1,13 @@
+<h1> Categories </h1>
+<div class="row">
+    <div class="col-sm-4">
+        <form action="/user/dashboard/category/edit/{{category.id}}?_method=PUT" method="POST"
+            enctype="application/x-www-form-urlencoded">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input value="{{category.name}}" type="text" name="name" placeholder="Enter Title" class="form-control">
+            </div>
+            <button class="btn btn-success">Edit</button>
+        </form>
+    </div>
+</div>

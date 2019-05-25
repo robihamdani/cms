@@ -1,0 +1,45 @@
+<div class="container">
+    <h1>Index Post</h1>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Title Post</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Category</th>
+                <th>Allow Comments</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each postRender}}
+            <tr>
+                <td> <a href="/page/{{id}}" target="_blank">{{title}} </a> </td>
+                <td>{{generateDate date 'DD MMMM YYYY'}}</td>
+                <td>{{status}}</td>
+                <td>{{category.name}}</td>
+                <th>{{allowComments}}</th>
+                <td><a href="/user/dashboard/postindex/edit/{{id}}" class="btn btn-success">Update</a></td>
+                <td>
+                    <form action="/user/dashboard/postindex/{{id}}?_method=DELETE" method="POST">
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+</div>
+<script>
+    let tables = document.getElementsByTagName('tbody');
+    let table = tables[tables.length - 1];
+    let rows = table.rows;
+    for (let i = 0, td; i < rows.length; i++) {
+        td = document.createElement('td');
+        td.appendChild(document.createTextNode(i + 1));
+        rows[i].insertBefore(td, rows[i].firstChild);
+    }
+</script>

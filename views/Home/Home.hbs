@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Blog Home - Start Bootstrap Template</title>
+
+
+</head>
+
+<body>
+
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Blog Entries Column -->
+      <div class="col-md-8">
+
+        <h1 class="my-4">Selamat Data
+          <small>Portofolio Robi Hamdani</small>
+        </h1>
+
+        <!-- Blog Post -->
+        {{#each renderPost}}
+        <div class="card mb-4">
+          <img class="card-img-top" src="/uploads/{{file}}" alt="Card image cap">
+          <div class="card-body">
+            <a href="/page/{{id}}">
+              <h2 class="card-title">{{title}}</h2>
+            </a>
+
+            <p class="card-text">{{body}}</p>
+            <a href="/page/{{id}}" class="btn btn-primary">Read More &rarr;</a>
+          </div>
+          <div class="card-footer text-muted">
+            Posted on {{generateDate date 'DD MMMM YYYY'}} Category
+            <a href="#">{{category.name}}</a>
+          </div>
+        </div>
+        {{/each}}
+
+        {{!-- Pagination --}}
+        {{> Home/pagination }}
+
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+
+          <!-- Search Widget -->
+          {{> Home/Widgets/search}}
+
+          <!-- Categories Widget -->
+          {{> Home/Widgets/category}}
+
+          <!-- Side Widget -->
+          {{> Home/Widgets/optional}}
+
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+</body>
+
+</html>

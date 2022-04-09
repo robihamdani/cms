@@ -19,7 +19,7 @@
     "express-upload": "^0.1.0",
     "joi": "^14.3.1",
     "method-override": "^3.0.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "mongodb": "^3.2.2",
     "mongoose": "^5.4.20",
     "passport": "^0.4.0",
